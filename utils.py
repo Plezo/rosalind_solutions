@@ -30,8 +30,6 @@ def getCompliment(dna):
 
     return ''.join([dct[ch] for ch in dna][::-1])
 
-
-
 def getFASTADict(ds):
     dct = {}
     k = ''
