@@ -37,14 +37,7 @@ if __name__ == '__main__':
     ds = [line.strip() for line in f]
 
     # Compress all lines of dna to one long dna string
-    dct = {}
-    k = ''
-    for i in range(len(ds)):
-        if ds[i][0] == '>':
-            k = ds[i][1:]
-        else:
-            dct[k] = dct.get(k, '') + ds[i]
-
+    dct = getFASTADict(ds)
     ds = list(dct.values())[0]
 
     # Need to check all substrings for dna and its compliment

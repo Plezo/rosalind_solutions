@@ -29,3 +29,16 @@ def getCompliment(dna):
     }
 
     return ''.join([dct[ch] for ch in dna][::-1])
+
+
+
+def getFASTADict(ds):
+    dct = {}
+    k = ''
+    for i in range(len(ds)):
+        if ds[i][0] == '>':
+            k = ds[i][1:]
+        else:
+            dct[k] = dct.get(k, '') + ds[i]
+
+    return dct
